@@ -93,7 +93,8 @@ from django.contrib.auth.hashers import check_password
 class ProfilePasswordChangeView(APIView):
     permission_classes=[IsAuthenticated]
 
-    def post(self, request):
+    def post(self, request):\
+        
         serializer = ChangeProfilePasswordSerializer(data=request.data)
         if serializer.is_valid():
             user = request.user
